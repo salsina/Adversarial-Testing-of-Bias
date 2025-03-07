@@ -2,6 +2,10 @@
 
 Repository containing code and data for experiments on adversarial testing of bias in language models.
 
+The growing adoption of Large Language Models (LLMs) in various applications has raised concerns about biases in their outputs. Recent studies have attempted to assess bias in LLMs by posing direct questions related to protected attributes (e.g., "Are men meaner than women?"). However, real-world scenarios often involve more nuanced or indirect questions that may still induce bias, such as those with added noise or those that reference protected attributes subtly (e.g., "Is being mean a common trait among some men?"). In this research, we leverage concepts from adversarial machine learning testing to investigate bias in LLM responses. We propose five Metamorphic Relations (MRs) designed to automatically modify questions based on two types of bias metadata: protected groups and their associated attributes. Using these MRs, we rephrase questions (e.g., by adding contextual details about groups or attributes) while expecting consistent, unbiased responses across both original and mutated versions.
+
+To validate our approach, we conducted experiments using a dataset comprising known bias-triggering questions from existing literature, alongside an evaluation method provided by the same sources. We applied our methodology to six LLMs: Llama 3.1-8B-Instruct, Llama 3.1-70B-Instruct, Llama 3.2-3B-Instruct, DeepSeek-R1-Distill-Llama-8B, GPT-3.5-Turbo, and GPT-4o-Mini. Our results demonstrate that the proposed Metamorphic Relations (MRs) uncover approximately twice as many biases in the benchmark dataset compared to BiasAsker, a state-of-the-art black-box LLM bias testing tool that also supplied the dataset and evaluation method. Additionally, we fine-tuned the LLMs using our MRs, significantly improving their resilience to producing biased responses. Specifically, Llama 3.1-8B-Instruct became 1.93 times more resilient, Llama 3.2-3B-Instruct 1.37 times, and DeepSeek-R1-Distill-Llama-8B 1.05 times, all without compromising their general performance.
+
 ## Repository Structure
 
 ### Run Models
